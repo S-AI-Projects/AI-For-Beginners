@@ -110,3 +110,29 @@ See the complete implementation, tests, and documentation:
 - Code: [applied-labs/r38-t046/example.py](applied-labs/r38-t046/example.py)
 - Tests: [applied-labs/r38-t046/test_example.py](applied-labs/r38-t046/test_example.py)
 - Documentation: [applied-labs/r38-t046/README.md](applied-labs/r38-t046/README.md)
+
+## Applied lab: Cosine-Similarity Lookup — Scenario Assessment (R38-T047)
+
+Building upon the vector arithmetic introduced in R38-T046, this applied software-engineering lab frames three applied questions to evaluate understanding of vector orientation, runtime error modes, and boundary decisions:
+- **Predict an Output:** Predicts and verifies cosine similarity for identical ($1.0$) and orthogonal ($0.0$) vectors.
+- **Diagnose a Failure:** Explains why zero vectors cause unhandled `ZeroDivisionError` or `NaN` in naive formulas.
+- **Choose a Boundary Policy:** Enforces returning the documented undefined-result sentinel (`None`) rather than inventing arbitrary similarity scores for zero-magnitude inputs.
+- **Where the Simplification Stops:** This lab tests local vector geometry; it does not train neural embedding models or evaluate semantic text understanding in live NLP applications.
+
+**Fixtures & Sentinel:**
+- Identical: `[1, 0]` vs `[1, 0]` $\to 1.0$
+- Orthogonal: `[1, 0]` vs `[0, 1]` $\to 0.0$
+- Zero vector: `[0, 0]` vs `[1, 0]` $\to \text{None}$ (undefined sentinel)
+
+**Run (from repository root):**
+
+    python3 lessons/5-NLP/16-RNN/applied-labs/r38-t047/example.py
+
+**Run automated tests:**
+
+    python3 -m unittest discover -s lessons/5-NLP/16-RNN/applied-labs/r38-t047 -p "test_*.py"
+
+See the complete implementation, tests, and documentation:
+- Code: [applied-labs/r38-t047/example.py](applied-labs/r38-t047/example.py)
+- Tests: [applied-labs/r38-t047/test_example.py](applied-labs/r38-t047/test_example.py)
+- Documentation: [applied-labs/r38-t047/README.md](applied-labs/r38-t047/README.md)
