@@ -46,6 +46,10 @@ Continue your learning in the following notebooks:
 
 * [Generating text with OpenAI-GPT and Hugging Face Transformers](GPT-PyTorch.ipynb)
 
+## Applied Labs
+
+* [Applied Lab R38-T025: Prompt-Template Escaping — Offline Service Adapter](applied-labs/r38-t025/README.md) - A safe local prompt-template rendering implementation paired with an offline service adapter to validate request payload construction and structured model dispatch without external network dependencies.
+
 ## Conclusion
 
 New general pre-trained language models do not only model language structure, but also contain vast amount of natural language. Thus, they can be effectively used to solve some NLP tasks in zero-shop or few-shot settings.
