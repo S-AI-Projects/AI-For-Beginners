@@ -1,0 +1,23 @@
+test_comprehensive_100_percent_equivalence_across_randomized_scenarios (test_example.TestGeneticSelection.test_comprehensive_100_percent_equivalence_across_randomized_scenarios)
+Compare the direct sorting approach and the declarative/lookup approach ... ok
+test_deterministic_tie_breaking (test_example.TestGeneticSelection.test_deterministic_tie_breaking)
+Ties in fitness broken deterministically by candidate ID ascending. ... ok
+test_example_scenario (test_example.TestGeneticSelection.test_example_scenario)
+Fitness A=3, B=8, C=5 with elite_count=2 selects [B, C]. ... ok
+test_population_immutability (test_example.TestGeneticSelection.test_population_immutability)
+Population candidates must remain immutable and original list untouched. ... ok
+test_rejection_elite_count_exceeds_population (test_example.TestGeneticSelection.test_rejection_elite_count_exceeds_population)
+elite_count > population size must be rejected with ValueError. ... ok
+test_rejection_negative_elite_count (test_example.TestGeneticSelection.test_rejection_negative_elite_count)
+Negative elite_count must be rejected with ValueError. ... ok
+test_select_all_candidates (test_example.TestGeneticSelection.test_select_all_candidates)
+elite_count = len(population) returns all candidates ranked. ... ok
+test_type_validation (test_example.TestGeneticSelection.test_type_validation)
+Validate type checks for elite_count and candidates. ... ok
+test_zero_elite_count (test_example.TestGeneticSelection.test_zero_elite_count)
+elite_count = 0 returns empty list. ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.005s
+
+OK

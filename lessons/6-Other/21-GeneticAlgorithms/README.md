@@ -63,6 +63,10 @@ Genetic Algorithms are used to solve many problems, including logistics and sear
 
 Watch [this great video](https://www.youtube.com/watch?v=qv6UVOQ0F44) talking about how computer can learn to play Super Mario using neural networks trained by genetic algorithms. We will learn more about computer learning to play games like that [in the next section](../22-DeepRL/README.md).
 
+## Applied Labs
+
+* [Applied Lab R38-T023: Deterministic Fitness Ranking and Elite Selection](applied-labs/r38-t023/README.md) - A comparative exploration of deterministic elitism selection in genetic algorithms comparing direct sorting and declarative lookup approaches.
+
 ## [Assignment: Diophantine Equation](Diophantine.ipynb)
 
 Your goal is to solve so-called **Diophantine equation** - an equation with integer roots. For example, consider the equation a+2b+3c+4d=30. You need to find the integer roots that satisfy this equation.
