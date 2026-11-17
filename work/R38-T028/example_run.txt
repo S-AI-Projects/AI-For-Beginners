@@ -1,0 +1,22 @@
+=== Discrete 3-State RL Environment: Reward Trace & Recovery ===
+
+--- Scenario 1: Optimal Trajectory ['right', 'right'] ---
+Step 1: State 0 --(right)--> State 1 | Reward: 0.0 | Done: False
+Step 2: State 1 --(right)--> State 2 | Reward: 1.0 | Done: True
+Total Reward: 1.0 (Expected: 1.0), Final State: 2
+
+--- Scenario 2: Step Cap (Repeated 'left') ---
+Step 1: State 0 --(left)--> State 0 | Reward: 0.0 | Done: False
+Step 2: State 0 --(left)--> State 0 | Reward: 0.0 | Done: False
+Step 3: State 0 --(left)--> State 0 | Reward: 0.0 | Done: False
+Step 4: State 0 --(left)--> State 0 | Reward: 0.0 | Done: False
+Step 5: State 0 --(left)--> State 0 | Reward: 0.0 | Done: True
+Total Reward: 0.0 (Expected: 0.0), Steps taken: 5
+
+--- Scenario 3: Failure & Recovery Handling ---
+After valid 'right': state=1, step=1
+Dispatching invalid action 'jump'...
+Caught expected error: Invalid action 'jump'. Must be one of ['left', 'right']
+State preserved after failure: state=1, step=1
+Recovered with valid 'right': state=2, reward=1.0, done=True
+Final Total Reward: 1.0
