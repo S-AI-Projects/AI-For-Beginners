@@ -1,0 +1,6 @@
+=== Word Embeddings: Cosine Similarity Lookup ===
+Worked Example: u=[3, 4], v=[4, 3]
+  -> Cosine Similarity: 0.96 (Expected: 0.96)
+[1, 0] vs [1, 0]: 1.0
+[1, 0] vs [0, 1]: 0.0
+[1, 0] vs [0, 0]: None (Zero-vector sentinel None)

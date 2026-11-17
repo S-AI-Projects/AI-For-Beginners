@@ -62,4 +62,8 @@ Word2Vec has been used for some interesting applications, including generating s
 
 Read through this paper on Word2Vec: [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/pdf/1301.3781.pdf)
 
+## Applied Labs
+
+* [Applied Lab R38-T027: Cosine-Similarity Lookup — Worked Example with Checks](applied-labs/r38-t027/README.md) - A step-by-step arithmetic derivation and robust implementation of cosine similarity lookup with zero-vector sentinel handling, validation checks, and regression tests.
+
 ## [Assignment: Notebooks](assignment.md)
