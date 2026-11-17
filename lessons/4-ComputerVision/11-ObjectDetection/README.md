@@ -174,3 +174,33 @@ Read through these articles and notebooks about YOLO and try them for yourself
 * [Implementation of Faster R-CNN in Python for Object Detection](https://www.analyticsvidhya.com/blog/2018/11/implementation-faster-r-cnn-python-object-detection/)
 
 ## [Assignment: Object Detection](lab/README.md)
+
+## Applied Lab: Bounding-Box Intersection over Union (R38-T050)
+
+In object detection, assessing localization precision requires measuring spatial overlap between predicted bounding boxes and ground-truth annotations via **Intersection over Union (IoU)**.
+
+This applied software-engineering lab illustrates:
+- **Continuous Coordinate Convention:** Axis-aligned bounding boxes represented as `[x_min, y_min, x_max, y_max]` without discrete $+1$ pixel offsets.
+- **Overlap & IoU Computation:** Precise calculation of intersection rectangle area and union area: $\text{IoU} = \text{Intersection} / \text{Union}$.
+- **Core Benchmark Fixtures:**
+  - Partial overlap: Box A `[0, 0, 2, 2]` and Box B `[1, 1, 3, 3]` yield $\text{IoU} = 1/7 \approx 0.142857$.
+  - Identical boxes: `[0, 0, 2, 2]` vs `[0, 0, 2, 2]` yield $\text{IoU} = 1.0$.
+  - Disjoint boxes: `[0, 0, 1, 1]` vs `[2, 2, 3, 3]` yield $\text{IoU} = 0.0$.
+- **Boundary & Degenerate Scenarios:**
+  - Edge-touching and corner-touching boxes produce 0.0 intersection area and 0.0 IoU.
+  - Degenerate zero-area boxes (zero union) return a safe 0.0 IoU sentinel, avoiding division by zero.
+- **Validation Contract:** Rejecting inverted coordinates ($x_{\min} > x_{\max}$ or $y_{\min} > y_{\max}$), booleans, non-numeric values, and non-finite floats (`NaN`, $\pm\infty$).
+- **Where Simplifications Stop:** This lab implements 2D axis-aligned geometric bounding-box IoU in the Python standard library. It does not train detection models, evaluate rotated boxes or polygon masks, perform non-maximum suppression (NMS), or use GPU acceleration.
+
+**Run demonstration (from repository root):**
+
+    python3 lessons/4-ComputerVision/11-ObjectDetection/applied-labs/r38-t050/example.py
+
+**Run automated unit tests:**
+
+    python3 -m unittest discover -v -s lessons/4-ComputerVision/11-ObjectDetection/applied-labs/r38-t050 -p "test_*.py"
+
+See the complete implementation, tests, and documentation:
+- Code: [applied-labs/r38-t050/example.py](applied-labs/r38-t050/example.py)
+- Tests: [applied-labs/r38-t050/test_example.py](applied-labs/r38-t050/test_example.py)
+- Documentation: [applied-labs/r38-t050/README.md](applied-labs/r38-t050/README.md)
