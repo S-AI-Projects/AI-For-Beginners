@@ -46,6 +46,10 @@ Continue your learning in the following notebooks:
 
 * [Generating text with OpenAI-GPT and Hugging Face Transformers](GPT-PyTorch.ipynb)
 
+## Applied Labs
+
+* [Applied Lab R38-T024: Prompt-Template Escaping — Invariant and State Trace](applied-labs/r38-t024/README.md) - A robust prompt-template engine featuring strict variable validation, literal user data isolation (preventing secondary template injection), intermediate state tracing, and prompt injection security distinctions.
+
 ## Conclusion
 
 New general pre-trained language models do not only model language structure, but also contain vast amount of natural language. Thus, they can be effectively used to solve some NLP tasks in zero-shop or few-shot settings.

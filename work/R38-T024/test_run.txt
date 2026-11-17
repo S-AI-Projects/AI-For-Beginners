@@ -1,0 +1,21 @@
+test_empty_template_and_variables (test_example.TestPromptTemplateEngine.test_empty_template_and_variables)
+Empty template with empty variables dict succeeds cleanly. ... ok
+test_reject_missing_keys (test_example.TestPromptTemplateEngine.test_reject_missing_keys)
+Reject template execution when required keys are missing. ... ok
+test_reject_unknown_keys (test_example.TestPromptTemplateEngine.test_reject_unknown_keys)
+Reject template execution when unknown extraneous keys are supplied. ... ok
+test_render_with_declared_variables (test_example.TestPromptTemplateEngine.test_render_with_declared_variables)
+Render templates from declared variables. ... ok
+test_state_trace_and_invariants (test_example.TestPromptTemplateEngine.test_state_trace_and_invariants)
+Test that state trace is recorded and satisfies step invariants. ... ok
+test_template_escaped_braces (test_example.TestPromptTemplateEngine.test_template_escaped_braces)
+Template literal escaped braces {{ and }} are unescaped to { and }. ... ok
+test_type_rejection (test_example.TestPromptTemplateEngine.test_type_rejection)
+Reject invalid template or variable types. ... ok
+test_user_data_braces_remain_literal_no_secondary_injection (test_example.TestPromptTemplateEngine.test_user_data_braces_remain_literal_no_secondary_injection)
+Braces inside user data remain literal and are not recursively substituted. ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK

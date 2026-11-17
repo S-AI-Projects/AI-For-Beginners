@@ -1,0 +1,24 @@
+=== Prompt-Template Escaping Engine & State Trace ===
+
+--- Rendered Prompt ---
+System: You are a helpful coding assistant.
+User Query: Translate this snippet: if (x > 0) { return {key: 'val'}; }
+Format: JSON
+
+--- State Trace & Invariants ---
+Step 1: parse_placeholders
+  Invariant: All extracted placeholders are alphanumeric variable identifiers.
+  State: {'template': 'System: {system_instruction}\nUser Query: {user_query}\nFormat: {output_format}', 'placeholders': ['system_instruction', 'user_query', 'output_format'], 'unique_count': 3}
+Step 2: validate_keys
+  Invariant: Provided keys match template declared placeholders exactly (no missing, no unknown).
+  State: {'provided_keys': ['output_format', 'system_instruction', 'user_query'], 'matched_keys': ['output_format', 'system_instruction', 'user_query']}
+Step 3: bind_literals
+  Invariant: User variables bound as literal strings without evaluation of inner expressions.
+  State: {'string_values': {'system_instruction': 'You are a helpful coding assistant.', 'user_query': "Translate this snippet: if (x > 0) { return {key: 'val'}; }", 'output_format': 'JSON'}, 'value_lengths': {'system_instruction': 35, 'user_query': 59, 'output_format': 4}}
+Step 4: substitute
+  Invariant: Single-pass substitution complete; user braces remain literal without secondary injection.
+  State: {'rendered_prompt': "System: You are a helpful coding assistant.\nUser Query: Translate this snippet: if (x > 0) { return {key: 'val'}; }\nFormat: JSON", 'output_length': 128}
+
+[SECURITY NOTICE]:
+Syntactic escaping guarantees braces in user data are rendered literally (no secondary injection).
+Note: Templating alone does NOT prevent semantic prompt injection (e.g. adversarial instructions).
