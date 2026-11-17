@@ -56,3 +56,11 @@ As an example, let's look at the architecture of VGG-16, a network that achieved
 ## Best-Known CNN Architectures
 
 [Continue your study about the best-known CNN architectures](CNN_Architectures.md)
+
+## Applied Labs
+
+Focused coding exercises that reinforce ConvNet concepts:
+
+| Lab | Topic | Description |
+|-----|-------|-------------|
+| [R38-T030](applied-labs/r38-t030/README.md) | Capability Negotiation | Set-intersection protocol handshake with gated dispatch, rejection handling, and a 3-config evaluation experiment measuring negotiation ratio and latency |

@@ -1,0 +1,44 @@
+test_dispatch_latency_non_negative (test_example.TestCapabilityGate.test_dispatch_latency_non_negative) ... ok
+test_dispatch_negotiated_capability (test_example.TestCapabilityGate.test_dispatch_negotiated_capability)
+Dispatching a negotiated capability invokes the handler. ... ok
+test_dispatch_returns_handler_value (test_example.TestCapabilityGate.test_dispatch_returns_handler_value) ... ok
+test_negotiated_set (test_example.TestCapabilityGate.test_negotiated_set) ... ok
+test_negotiation_ratio (test_example.TestCapabilityGate.test_negotiation_ratio) ... ok
+test_config_a_disjoint_no_negotiation (test_example.TestEvaluationExperiment.test_config_a_disjoint_no_negotiation) ... ok
+test_config_b_partial_negotiates_tools (test_example.TestEvaluationExperiment.test_config_b_partial_negotiates_tools) ... ok
+test_config_c_identical_full_negotiation (test_example.TestEvaluationExperiment.test_config_c_identical_full_negotiation) ... ok
+test_custom_config (test_example.TestEvaluationExperiment.test_custom_config)
+Custom single config with identical sets. ... ok
+test_disjoint_latency_zero (test_example.TestEvaluationExperiment.test_disjoint_latency_zero) ... ok
+test_latency_non_negative_for_successful_dispatches (test_example.TestEvaluationExperiment.test_latency_non_negative_for_successful_dispatches) ... ok
+test_negotiation_ratio_bounded (test_example.TestEvaluationExperiment.test_negotiation_ratio_bounded) ... ok
+test_three_results_returned (test_example.TestEvaluationExperiment.test_three_results_returned) ... ok
+test_prompts_rejected (test_example.TestGatedDispatchRejection.test_prompts_rejected)
+'prompts' is in server set but not negotiated → rejected. ... ok
+test_rejection_error_message_contains_capability (test_example.TestGatedDispatchRejection.test_rejection_error_message_contains_capability)
+Error message mentions the rejected capability name. ... ok
+test_resources_rejected (test_example.TestGatedDispatchRejection.test_resources_rejected)
+'resources' is in client set but not negotiated → rejected. ... ok
+test_state_unchanged_after_rejection (test_example.TestGatedDispatchRejection.test_state_unchanged_after_rejection)
+Gate's negotiated set remains intact after a rejected dispatch. ... ok
+test_unknown_capability_rejected (test_example.TestGatedDispatchRejection.test_unknown_capability_rejected)
+Entirely unknown capability → rejected. ... ok
+test_duplicate_handler_raises (test_example.TestHandlerRegistration.test_duplicate_handler_raises) ... ok
+test_no_handler_registered_raises_key_error (test_example.TestHandlerRegistration.test_no_handler_registered_raises_key_error) ... ok
+test_register_un_negotiated_raises (test_example.TestHandlerRegistration.test_register_un_negotiated_raises) ... ok
+test_canonical_example_intersection (test_example.TestNegotiationResult.test_canonical_example_intersection)
+client={tools,resources} ∩ server={tools,prompts} = {tools}. ... ok
+test_canonical_ratio (test_example.TestNegotiationResult.test_canonical_ratio)
+negotiation_ratio = 1 negotiated / 2 client caps = 0.5. ... ok
+test_client_caps_stored (test_example.TestNegotiationResult.test_client_caps_stored) ... ok
+test_disjoint_sets_empty_negotiation (test_example.TestNegotiationResult.test_disjoint_sets_empty_negotiation) ... ok
+test_empty_client_raises (test_example.TestNegotiationResult.test_empty_client_raises) ... ok
+test_empty_server_raises (test_example.TestNegotiationResult.test_empty_server_raises) ... ok
+test_identical_sets_full_negotiation (test_example.TestNegotiationResult.test_identical_sets_full_negotiation) ... ok
+test_non_string_capability_raises (test_example.TestNegotiationResult.test_non_string_capability_raises) ... ok
+test_server_caps_stored (test_example.TestNegotiationResult.test_server_caps_stored) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.001s
+
+OK
