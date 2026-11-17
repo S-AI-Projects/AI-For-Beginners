@@ -1,0 +1,13 @@
+=== NER Token-Budget Preflight: Baseline vs Refactored Policy ===
+Sample Input: 'Tricuspid valve regurgitation and lithium carbonate toxicity in infant'
+Configured Budget: 5
+
+[Baseline Output]:
+  Retained (5): ['Tricuspid', 'valve', 'regurgitation', 'and', 'lithium']
+  Truncated Count: 4
+
+[Refactored Output]:
+  Retained (5): ['Tricuspid', 'valve', 'regurgitation', 'and', 'lithium']
+  Truncated Count: 4
+
+Verified: Baseline and refactored TokenTruncationPolicy yield identical results.
