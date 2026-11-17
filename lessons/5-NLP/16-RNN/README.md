@@ -82,3 +82,31 @@ Generation with Visual Attention](https://arxiv.org/pdf/1502.03044v2.pdf)
 - [Understanding LSTM Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/) by Christopher Olah.
 
 ## [Assignment: Notebooks](assignment.md)
+
+## Applied lab: Cosine-Similarity Lookup — Evaluation Experiment (R38-T046)
+
+In natural language processing and recurrent models, semantic representations rely on comparing high-dimensional embedding vectors. A foundational operation for computing vector similarity is **Cosine Similarity**.
+
+This applied software-engineering lab illustrates:
+- **Dot Product & Euclidean Norm:** Calculating $\sum A_i B_i$ and vector magnitudes $\sqrt{\sum A_i^2}$.
+- **Zero-Vector Handling:** Explicitly returning a documented undefined-result sentinel (`None`) when a vector has zero magnitude, avoiding division-by-zero or misleading similarity scores.
+- **Evaluation Experiment:** Comparing three controlled configurations across vector dimensionalities (2D, 4D, 8D) to verify mathematical precision and linear computational scaling.
+- **Where the Simplification Stops:** This lab evaluates local mathematical vector fixtures; it does not train neural embedding weights (e.g. Word2Vec/GloVe), measure semantic linguistic accuracy, or utilize hardware accelerators.
+
+**Mandatory Fixtures:**
+- Identical: `[1, 0]` vs `[1, 0]` $\to 1.0$
+- Orthogonal: `[1, 0]` vs `[0, 1]` $\to 0.0$
+- Zero vector: `[0, 0]` vs `[1, 0]` $\to \text{None}$ (undefined sentinel)
+
+**Run (from repository root):**
+
+    python3 lessons/5-NLP/16-RNN/applied-labs/r38-t046/example.py
+
+**Run automated tests:**
+
+    python3 -m unittest discover -s lessons/5-NLP/16-RNN/applied-labs/r38-t046 -p "test_*.py"
+
+See the complete implementation, tests, and documentation:
+- Code: [applied-labs/r38-t046/example.py](applied-labs/r38-t046/example.py)
+- Tests: [applied-labs/r38-t046/test_example.py](applied-labs/r38-t046/test_example.py)
+- Documentation: [applied-labs/r38-t046/README.md](applied-labs/r38-t046/README.md)

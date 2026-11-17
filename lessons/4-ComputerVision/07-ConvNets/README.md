@@ -56,3 +56,18 @@ As an example, let's look at the architecture of VGG-16, a network that achieved
 ## Best-Known CNN Architectures
 
 [Continue your study about the best-known CNN architectures](CNN_Architectures.md)
+
+## Applied lab: Capability Negotiation and Feature Gating (R38-T042)
+
+In distributed and agentic machine learning workflows (such as client-server vision inference or microservice-based vision pipelines), clients and servers often support different feature sets. Before dispatching requests, systems perform **capability negotiation** to discover and agree on shared capabilities.
+
+This applied software engineering lab illustrates:
+- **Capability Discovery & Intersection:** How client capabilities (`{"tools", "resources"}`) and server capabilities (`{"tools", "prompts"}`) are intersected to establish agreed features (`{"tools"}`).
+- **Pre-Dispatch Validation & Feature Gating:** How requests are strictly validated against negotiated capabilities *before* reaching any internal dispatch handlers, rejecting unsupported operations like `resources` or `prompts`.
+- **Software Engineering Illustration:** Accompanying this CNN lesson, this lab demonstrates system boundary safety when exposing machine learning tools or services over an interface.
+- **Where the Analogy Stops:** Capability negotiation is a software-engineering and protocol design pattern. It is **not** part of mathematical convolution, filter learning, backpropagation, or CNN architecture design. It is a local educational simulation using pure Python standard library.
+
+See the complete implementation, tests, and documentation:
+- Code: [applied-labs/r38-t042/example.py](applied-labs/r38-t042/example.py)
+- Tests: [applied-labs/r38-t042/test_example.py](applied-labs/r38-t042/test_example.py)
+- Documentation: [applied-labs/r38-t042/README.md](applied-labs/r38-t042/README.md)

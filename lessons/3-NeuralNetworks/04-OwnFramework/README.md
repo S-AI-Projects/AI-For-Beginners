@@ -84,3 +84,33 @@ In this lab, you are asked to use the framework you constructed in this lesson t
 
 * [Instructions](lab/README.md)
 * [Notebook](lab/MyFW_MNIST.ipynb)
+
+## Applied lab: Single Perceptron Update — Offline Service Adapter (R38-T045)
+
+Before constructing multi-layered perceptrons and backpropagation frameworks, it is essential to understand the elementary building block: a single perceptron prediction and parameter update step.
+
+This applied software-engineering lab illustrates:
+- **Weighted Sum:** How inputs and weights form linear combinations $z = \sum w_i x_i + b$.
+- **Classification Threshold & Zero-Score Tie Rule:** Predictions use step activation $\hat{y} = 1$ if $z > 0$ else $0$. A score of exactly zero ties in favor of class 0.
+- **Perceptron Learning Rule:** Error $e = y - \hat{y}$ drives parameter updates via $w_i \leftarrow w_i + \eta \cdot e \cdot x_i$ and $b \leftarrow b + \eta \cdot e$.
+- **Callable Interface & Dependency Injection:** Decouples the update logic from any specific inference provider by passing a callable predictor: `predictor(weights, bias, inputs) -> prediction`.
+- **Deterministic Local Adapter:** Evaluates predictions locally and deterministically without network access.
+- **Where the Simplification Stops:** This lab evaluates a single deterministic step on a 2D fixture; it does not train a complete multilayer neural network over multiple epochs, nor does it establish network communication, authentication, or remote cloud SLA guarantees.
+
+**Main Fixture:**
+- Initial weights: `[0, 0]`, bias: `0`, input: `[1, 2]`, target: `1`, learning rate: `1`
+- Calculation: $z = (0 \cdot 1) + (0 \cdot 2) + 0 = 0 \implies \hat{y} = 0, \text{error} = 1 - 0 = 1$
+- Updated weights: `[1, 2]`, updated bias: `1`
+
+**Run (from repository root):**
+
+    python3 lessons/3-NeuralNetworks/04-OwnFramework/applied-labs/r38-t045/example.py
+
+**Run automated tests:**
+
+    python3 -m unittest discover -s lessons/3-NeuralNetworks/04-OwnFramework/applied-labs/r38-t045 -p "test_*.py"
+
+See the complete implementation, tests, and documentation:
+- Code: [applied-labs/r38-t045/example.py](applied-labs/r38-t045/example.py)
+- Tests: [applied-labs/r38-t045/test_example.py](applied-labs/r38-t045/test_example.py)
+- Documentation: [applied-labs/r38-t045/README.md](applied-labs/r38-t045/README.md)
