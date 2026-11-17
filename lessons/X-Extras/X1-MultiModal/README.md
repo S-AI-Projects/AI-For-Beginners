@@ -74,3 +74,27 @@ Picture generated from prompt *a closeup watercolor portrait of young male teach
 
 * VQGAN Paper: [Taming Transformers for High-Resolution Image Synthesis](https://compvis.github.io/taming-transformers/paper/paper.pdf)
 * CLIP Paper: [Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/pdf/2103.00020.pdf)
+
+## Applied lab: Binary Classification Evaluation (R38-T044)
+
+Multi-modal models like CLIP perform image classification by matching images against text prompts and selecting the highest-probability class. Evaluating whether those classifications are correct requires comparing predicted labels against ground-truth labels and computing metrics such as precision and recall.
+
+This applied software-engineering lab illustrates:
+- **Confusion Matrix:** How each (actual, predicted) label pair is classified as TP, FN, FP, or TN, and how the four counts must sum to the total number of samples.
+- **Precision and Recall:** Precision = TP / (TP + FP) measures the fraction of positive predictions that are correct; Recall = TP / (TP + FN) measures the fraction of actual positives that the classifier found.
+- **Zero-Denominator Handling:** When a classifier makes no positive predictions, TP + FP = 0 and precision is undefined. The lab implements an explicit policy of returning 0.0 to prevent silent division-by-zero errors.
+- **Worked Example:** `y_true=[1,1,0,0]`, `y_pred=[1,0,1,0]` gives TP=1, FN=1, FP=1, TN=1, precision=0.5, recall=0.5.
+- **Where the Simplification Stops:** This lab uses fixed label fixtures, not predictions from a trained neural network. It does not perform real multimodal inference, model training, or evaluate cloud service performance.
+
+**Run (from repository root):**
+
+    python3 lessons/X-Extras/X1-MultiModal/applied-labs/r38-t044/example.py
+
+**Run automated tests:**
+
+    python3 -m unittest discover -s lessons/X-Extras/X1-MultiModal/applied-labs/r38-t044 -p "test_*.py"
+
+See the complete implementation, tests, and documentation:
+- Code: [applied-labs/r38-t044/example.py](applied-labs/r38-t044/example.py)
+- Tests: [applied-labs/r38-t044/test_example.py](applied-labs/r38-t044/test_example.py)
+- Documentation: [applied-labs/r38-t044/README.md](applied-labs/r38-t044/README.md)
