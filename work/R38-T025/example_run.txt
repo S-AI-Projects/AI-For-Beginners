@@ -1,0 +1,14 @@
+=== Prompt-Template Escaping & Offline Service Adapter ===
+
+--- Rendered Prompt ---
+You are an assistant. Task: Extract entity details
+Input Data: {'entity': 'Item_42', 'config': { 'nested': True }}
+Guideline: Output format must match: {'status': 'complete'}
+
+--- Model Response ---
+Response ID: mock-resp-0001
+Model: offline-gpt-4-turbo
+Output: [OfflineModelResponse for model=offline-gpt-4-turbo hash=2f34c121]
+Usage: TokenUsage(prompt_tokens=24, completion_tokens=4, total_tokens=28)
+
+Completed successfully without remote network access.
