@@ -1,0 +1,19 @@
+=================================================================
+Capability Negotiation — Gated Dispatch & Evaluation Experiment
+=================================================================
+
+--- Canonical Example ---
+Client: {tools, resources}  |  Server: {tools, prompts}
+Negotiated set : {'tools'}
+Negotiation ratio: 0.50
+
+Dispatch 'tools'     → SUCCESS: tool_result:image_classifier  (0.46 µs)
+Dispatch 'resources' → REJECTED (as expected):
+  Capability 'resources' was not negotiated. Negotiated set: {'tools'}. Client declared: {'tools', 'resources'}. Server declared: {'prompts', 'tools'}.
+
+--- Evaluation Experiment (3 Configurations) ---
+Config         Negotiated             Ratio    Latency (µs)        Dispatch    OK?
+----------------------------------------------------------------------------------
+A_disjoint     set()                   0.00             N/A          <none>      ❌
+B_partial      {'tools'}               0.50           0.250           tools      ✅
+C_identical    {'tools', 'resources'}    1.00           0.250       resources      ✅
