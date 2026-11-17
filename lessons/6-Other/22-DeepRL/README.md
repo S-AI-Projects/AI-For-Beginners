@@ -112,3 +112,20 @@ Watch [this great video](https://www.youtube.com/watch?v=qv6UVOQ0F44) talking ab
 ## Assignment: [Train a Mountain Car](lab/README.md)
 
 Your goal during this assignment would be to train a different Gym environment - [Mountain Car](https://www.gymlibrary.ml/environments/classic_control/mountain_car/).
+
+## Applied lab: Finite-State Reward Trace & Approach Comparison (R38-T043)
+
+Before training complex neural network policies or actor-critic architectures, it is essential to understand the underlying mechanics of a discrete Markov Decision Process (MDP): state transitions, reward allocation, terminal conditions, and bounded horizons.
+
+This applied software-engineering lab illustrates:
+- **State Transitions:** Simulates a 3-state chain ($\{0, 1, 2\}$) with actions `left` and `right`.
+- **Terminal States:** Entering state $2$ terminates the episode immediately; no further actions are executed.
+- **Reward Accumulation:** A reward of $+1$ is granted strictly upon transition into terminal state $2$; intermediate transitions yield $0$.
+- **Bounded Horizons:** Enforces a maximum step cap ($5$ steps), cleanly distinguishing terminal completion from truncation.
+- **Two-Approach Comparison:** Compares a step-by-step direct simulator (Approach 1) against an independent declarative lookup calculation (Approach 2) on identical inputs to mathematically prove model consistency.
+- **Where the Simplification Stops:** This lab is a deterministic software-engineering simulation. It does not train a neural network, learn an optimal policy, use OpenAI Gym/Gymnasium, or demonstrate trained-model performance.
+
+See the complete implementation, tests, and documentation:
+- Code: [applied-labs/r38-t043/example.py](applied-labs/r38-t043/example.py)
+- Tests: [applied-labs/r38-t043/test_example.py](applied-labs/r38-t043/test_example.py)
+- Documentation: [applied-labs/r38-t043/README.md](applied-labs/r38-t043/README.md)

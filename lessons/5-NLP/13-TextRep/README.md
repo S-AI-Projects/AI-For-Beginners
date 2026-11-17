@@ -71,3 +71,33 @@ Try some other exercises using bag-of-words and different data models. You might
 Practice your skills with text embeddings and bag-of-words techniques on [Microsoft Learn](https://docs.microsoft.com/learn/modules/intro-natural-language-processing-pytorch/?WT.mc_id=academic-77998-cacaste)
 
 ## [Assignment: Notebooks](assignment.md)
+
+## Applied lab: Token-Budget Preflight — Failure and Recovery Example (R38-T048)
+
+Before dispatching prompts to neural language models, client applications perform **preflight validation** to ensure inputs fit within the model's configured context window and token budget.
+
+This applied software-engineering lab illustrates:
+- **Whitespace Tokenization:** Splitting text into discrete tokens using Python's standard library as a teaching approximation.
+- **Token Accounting & Truncation:** Retaining only the first tokens up to the configured budget and reporting original count, retained count, removed count, and whether truncation occurred.
+- **Fail-Fast Error Handling:** Rejecting physically invalid negative budgets (`ValueError`) without silently converting them to zero.
+- **Failure and Recovery Sequence:** Catching an invalid request and cleanly processing subsequent valid requests without client-side state corruption.
+- **Where the Simplification Stops:** This lab uses whitespace splitting as an educational demonstration; real LLMs use subword tokenizers (e.g. Byte-Pair Encoding or WordPiece). It does not load trained models, call external APIs, or require GPU hardware.
+
+**Mandatory Fixtures:**
+- Normal Truncation: `"one two three four"`, budget `3` $\to$ retained `["one", "two", "three"]`, removed $1$, truncated `True`
+- Empty Input: `""`, budget `3` $\to$ retained `[]`, removed $0$, truncated `False`
+- Negative Budget: `"one two"`, budget `-1` $\to$ raises `ValueError`
+- Recovery: Catching the `-1` exception and successfully processing `"one two three four"` with budget `3`
+
+**Run (from repository root):**
+
+    python3 lessons/5-NLP/13-TextRep/applied-labs/r38-t048/example.py
+
+**Run automated tests:**
+
+    python3 -m unittest discover -s lessons/5-NLP/13-TextRep/applied-labs/r38-t048 -p "test_*.py"
+
+See the complete implementation, tests, and documentation:
+- Code: [applied-labs/r38-t048/example.py](applied-labs/r38-t048/example.py)
+- Tests: [applied-labs/r38-t048/test_example.py](applied-labs/r38-t048/test_example.py)
+- Documentation: [applied-labs/r38-t048/README.md](applied-labs/r38-t048/README.md)

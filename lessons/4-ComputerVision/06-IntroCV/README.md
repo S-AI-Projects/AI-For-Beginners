@@ -107,3 +107,32 @@ Read more on optical flow [in this great tutorial](https://learnopencv.com/optic
 In this lab, you will take a video with simple gestures, and your goal is to extract up/down/left/right movements using optical flow.
 
 <img src="images/palm-movement.png" width="30%" alt="Palm Movement Frame"/>
+
+## Applied lab: Tensor-Shape Contract — Runnable Concept Example (R38-T049)
+
+Before feeding digital images to deep learning vision architectures, images must be preprocessed and batched into standardized multidimensional tensors.
+
+This applied software-engineering lab illustrates:
+- **$N \times H \times W$ Tensor Representation:** Organizing batches of images into $N$ (batch count) $\times$ $H$ (height) $\times$ $W$ (width).
+- **Pixel Normalization:** Scaling raw 8-bit color intensities ($0\text{--}255$) to standardized floating-point ranges ($0.0\text{--}1.0$) via $\text{pixel} / 255.0$.
+- **Shape Preservation Contract:** Ensuring that normalization strictly preserves the $(N, H, W)$ tensor geometry.
+- **Input Validation:** Rejecting negative pixels, pixels $> 255$, booleans, non-finite values (`NaN`, $\pm\infty$), and ragged or malformed nested batches.
+- **Where the Simplification Stops:** This lab demonstrates local standard-library tensor preprocessing; it does not load disk image formats (JPEG/PNG), call OpenCV/NumPy/PyTorch, or train computer vision models.
+
+**Mandatory Fixture:**
+- Input: `[[[0, 255], [128, 64]]]` (shape: `(1, 2, 2)`)
+- Normalized: `[[[0.0, 1.0], [128/255, 64/255]]]` $\approx [[[0.0, 1.0], [0.50196, 0.25098]]]$
+- Normalized Shape: `(1, 2, 2)` (strictly preserved)
+
+**Run (from repository root):**
+
+    python3 lessons/4-ComputerVision/06-IntroCV/applied-labs/r38-t049/example.py
+
+**Run automated tests:**
+
+    python3 -m unittest discover -s lessons/4-ComputerVision/06-IntroCV/applied-labs/r38-t049 -p "test_*.py"
+
+See the complete implementation, tests, and documentation:
+- Code: [applied-labs/r38-t049/example.py](applied-labs/r38-t049/example.py)
+- Tests: [applied-labs/r38-t049/test_example.py](applied-labs/r38-t049/test_example.py)
+- Documentation: [applied-labs/r38-t049/README.md](applied-labs/r38-t049/README.md)
