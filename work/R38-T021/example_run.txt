@@ -1,0 +1,6 @@
+=== Autoencoder Input Preprocessing: Tensor-Shape Contract & Normalization ===
+Original input batch: [[[0, 255], [128, 64]]]
+Input shape: (1, 2, 2) (1 sample, height=2, width=2)
+Normalized batch: [[[0.0, 1.0], [0.5019607843137255, 0.25098039215686274]]]
+Normalized shape: (1, 2, 2) (Shape strictly preserved)
+Contract verified successfully: pixel values in [0, 1] without altering shape.

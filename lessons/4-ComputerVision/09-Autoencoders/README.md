@@ -92,6 +92,10 @@ For reference, read more about autoencoders in these resources:
 * [Variational Autoencoders Explained](https://kvfrans.com/variational-autoencoders-explained/)
 * [Conditional Variational Autoencoders](https://ijdykeman.github.io/ml/2016/12/21/cvae.html)
 
+## Applied Labs
+
+* [Applied Lab R38-T021: Tensor-Shape Contract & Normalization](applied-labs/r38-t021/README.md) - A runnable concept example and test suite demonstrating input validation and normalization ($[0, 255] \to [0.0, 1.0]$) preserving the $(N \times H \times W)$ shape contract for autoencoder pipelines.
+
 ## Assignment
 
 At the end of [this notebook using TensorFlow](AutoencodersTF.ipynb), you will find a 'task' - use this as your assignment.
