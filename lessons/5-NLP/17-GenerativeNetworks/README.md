@@ -71,6 +71,10 @@ Here are some articles to expand your knowledge
 * Different approaches to text generation with Markov Chain, LSTM and GPT-2: [blog post](https://towardsdatascience.com/text-generation-gpt-2-lstm-markov-chain-9ea371820e1e)
 * Text generation sample in [Keras documentation](https://keras.io/examples/generative/lstm_character_level_text_generation/)
 
+## Applied Labs
+
+* [Applied Lab R38-T022: Token-Budget Preflight](applied-labs/r38-t022/README.md) - A boundary-case lesson extension demonstrating prompt token-budget enforcement, whitespace tokenization approximation, and truncated token reporting.
+
 ## [Assignment](lab/README.md)
 
 We have seen how to generate text character-by-character. In the lab, you will explore word-level text generation.

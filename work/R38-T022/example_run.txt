@@ -1,0 +1,18 @@
+=== Generative Networks: Token-Budget Preflight Demonstration ===
+Prompt: 'one two three four', Budget: 3
+  -> Retained tokens: ['one', 'two', 'three']
+  -> Truncated count: 1
+  -> Original count : 4
+
+Prompt: 'alpha beta gamma', Budget: 3
+  -> Retained tokens: ['alpha', 'beta', 'gamma']
+  -> Truncated count: 0
+
+Prompt: 'hello world', Budget: 0
+  -> Retained tokens: []
+  -> Truncated count: 2
+
+Prompt: '', Budget: 5
+  -> Retained tokens: []
+  -> Truncated count: 0
+
