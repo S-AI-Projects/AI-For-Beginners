@@ -80,3 +80,36 @@ Read through the blog [The Unreasonable Effectiveness of Recurrent Neural Networ
 ## [Assignment](lab/README.md)
 
 In the assignment for this lesson, you will have to train a medical entity recognition model. You can start with training an LSTM model as described in this lesson, and proceed with using the BERT transformer model. Read [the instructions](lab/README.md) to get all the details.
+
+## Applied lab: token-budget preflight (R38-T041)
+
+This lab shows how a prompt is checked against a token budget before it is sent
+to a model, and how truncation is reported. Example and tests:
+[applied-labs/r38-t041](applied-labs/r38-t041/example.py).
+
+**Prerequisites:** Python 3 only (standard library). No model download, paid
+provider or GPU.
+
+**Simulation label:** the tokenizer is a whitespace splitter, a teaching
+approximation, not the model's real tokenizer. Real tokenizers split into
+subwords, so real counts will differ. The lab makes no claim about real
+hardware, cloud behaviour or trained-model performance.
+
+**Run (from the repository root):**
+
+    python3 lessons/5-NLP/19-NER/applied-labs/r38-t041/example.py "one two three four" 3
+
+**Fixture / input:** text `one two three four`, budget `3`
+
+**Expected output:**
+
+    Tokenizer: whitespace (teaching approximation, not the model's real tokenizer)
+    Budget: 3
+    Retained: [one,two,three]
+    Removed: 1 token(s) [four]
+
+An empty input retains no tokens; a negative budget is rejected with an error.
+
+**Run the tests:**
+
+    python3 -m unittest discover -s lessons/5-NLP/19-NER/applied-labs/r38-t041 -p "test_*.py"
