@@ -1,0 +1,38 @@
+============================================================
+Single Perceptron Update — Scenario Assessment
+============================================================
+
+--- Canonical Update (spec example) ---
+weights=[0,0], bias=0, input=[1,2], target=1, lr=1
+Applying update with delta = lr*(target - prediction):
+  With score=0 and tie rule (>=0 → 1): prediction=1, delta=0
+  Spec illustrates formula using initial_prediction=0:
+  delta=1*(1-0)=1  =>  weights=[1,2], bias=1
+
+  (bias=-0.5 to force initial prediction=0)
+  Input: [1.0, 2.0]  Target: 1
+  score=-0.5000  prediction=0  delta=1.0000
+  weights: [1.0, 2.0]  bias: 0.5000  updated: True
+
+  Direct formula verification (weights=[0,0] bias=0 pred=0 assumed):
+  delta = 1*(1-0) = 1
+  w_new = [0,0] + 1*[1,2] = [1,2]
+  b_new = 0 + 1 = 1
+
+--- Scenario A: Predict Output ---
+  weights=[1,2], bias=1, input=[1,2]
+  score = 1*1 + 2*2 + 1 = 6.0  prediction = 1
+  weights=[1,-1], bias=0, input=[1,1]
+  score = 1*1 + (-1)*1 + 0 = 0.0  prediction (tie) = 1
+
+--- Scenario B: Diagnose Failure ---
+  AND-gate dataset with weights=[1,1], bias=-1.5
+  Accuracy: 100%  Misclassified: []
+
+  Zero-weight model (always predicts 1 due to tie rule):
+  Accuracy: 25%  Misclassified indices: [0, 1, 2]
+
+--- Scenario C: Choose Boundary Policy (score=0) ---
+  policy='positive_tie': prediction=1
+  policy='negative_tie': prediction=0
+  policy='abstain': prediction=-1

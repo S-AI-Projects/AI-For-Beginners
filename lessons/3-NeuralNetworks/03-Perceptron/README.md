@@ -91,3 +91,11 @@ In this lesson, we have implemented a perceptron for binary classification task,
 
 * [Instructions](lab/README.md)
 * [Notebook](lab/PerceptronMultiClass.ipynb)
+
+## Applied Labs
+
+Focused coding exercises that reinforce perceptron concepts:
+
+| Lab | Topic | Description |
+|-----|-------|-------------|
+| [R38-T029](applied-labs/r38-t029/README.md) | Single Perceptron Update | Forward pass, learning rule, tie-rule documentation, and three scenario assessments (predict output, diagnose failure, boundary policy) |
