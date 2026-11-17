@@ -1,0 +1,19 @@
+test_failure_and_recovery_invalid_action (test_example.TestThreeStateEnvironment.test_failure_and_recovery_invalid_action)
+Exercise an invalid action, verify expected failure, ... ok
+test_invalid_initial_and_reset_state (test_example.TestThreeStateEnvironment.test_invalid_initial_and_reset_state)
+Rejects initial states or reset states outside {0, 1, 2}. ... ok
+test_optimal_trajectory (test_example.TestThreeStateEnvironment.test_optimal_trajectory)
+[right, right] ends at 2 with total reward 1. ... ok
+test_post_termination_stepping_rejected (test_example.TestThreeStateEnvironment.test_post_termination_stepping_rejected)
+Stepping after episode termination raises EpisodeTerminatedError. ... ok
+test_repeated_left_ends_at_step_cap (test_example.TestThreeStateEnvironment.test_repeated_left_ends_at_step_cap)
+Repeated left ends at step cap 5 with total reward 0. ... ok
+test_state_trace_recording (test_example.TestThreeStateEnvironment.test_state_trace_recording)
+Verify audit trace correctly records all transitions. ... ok
+test_zigzag_trajectory (test_example.TestThreeStateEnvironment.test_zigzag_trajectory)
+Test sequence [right, left, right, right] -> reaches 2 on step 4. ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK

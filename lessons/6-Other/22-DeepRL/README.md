@@ -112,3 +112,11 @@ Watch [this great video](https://www.youtube.com/watch?v=qv6UVOQ0F44) talking ab
 ## Assignment: [Train a Mountain Car](lab/README.md)
 
 Your goal during this assignment would be to train a different Gym environment - [Mountain Car](https://www.gymlibrary.ml/environments/classic_control/mountain_car/).
+
+## Applied Labs
+
+Hands-on labs that complement this lesson with focused coding exercises:
+
+| Lab | Topic | Description |
+|-----|-------|-------------|
+| [R38-T028](applied-labs/r38-t028/README.md) | Finite-State Reward Trace | 3-state discrete RL environment with step cap, reward tracing, and failure & recovery handling |
