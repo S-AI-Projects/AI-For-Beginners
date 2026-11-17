@@ -1,0 +1,43 @@
+test_dimension_mismatch_raises (test_example.TestPerceptronForwardPass.test_dimension_mismatch_raises)
+Mismatched input/weight lengths raise ValueError. ... ok
+test_negative_score_predicts_zero (test_example.TestPerceptronForwardPass.test_negative_score_predicts_zero) ... ok
+test_positive_score_predicts_one (test_example.TestPerceptronForwardPass.test_positive_score_predicts_one) ... ok
+test_score_basic (test_example.TestPerceptronForwardPass.test_score_basic)
+Weighted sum plus bias computed correctly. ... ok
+test_score_zero (test_example.TestPerceptronForwardPass.test_score_zero)
+Score is exactly 0 for zero weights and bias. ... ok
+test_zero_score_tie_rule_predicts_one (test_example.TestPerceptronForwardPass.test_zero_score_tie_rule_predicts_one)
+Score == 0 must predict 1 (documented tie rule: score >= 0 → 1). ... ok
+test_canonical_spec_update_formula (test_example.TestPerceptronUpdate.test_canonical_spec_update_formula)
+Spec example: weights=[0,0] bias=0, pred=0 (forced), target=1, lr=1 ... ok
+test_invalid_learning_rate_raises (test_example.TestPerceptronUpdate.test_invalid_learning_rate_raises) ... ok
+test_invalid_learning_rate_zero_raises (test_example.TestPerceptronUpdate.test_invalid_learning_rate_zero_raises) ... ok
+test_invalid_target_raises (test_example.TestPerceptronUpdate.test_invalid_target_raises) ... ok
+test_learning_rate_scales_delta (test_example.TestPerceptronUpdate.test_learning_rate_scales_delta)
+Delta scales linearly with learning_rate. ... ok
+test_no_update_when_correct (test_example.TestPerceptronUpdate.test_no_update_when_correct)
+When prediction == target, weights and bias are unchanged. ... ok
+test_spec_formula_values (test_example.TestPerceptronUpdate.test_spec_formula_values)
+Verify that delta=1 on a [0,0]/bias=0 perceptron with pred=0 assumed ... ok
+test_update_pred1_target0 (test_example.TestPerceptronUpdate.test_update_pred1_target0)
+When prediction=1 and target=0: ... ok
+test_known_positive_score (test_example.TestScenarioA_PredictOutput.test_known_positive_score) ... ok
+test_negative_score_predicts_zero (test_example.TestScenarioA_PredictOutput.test_negative_score_predicts_zero) ... ok
+test_zero_score_tie_predicts_one (test_example.TestScenarioA_PredictOutput.test_zero_score_tie_predicts_one)
+score = 1*1 + (-1)*1 + 0 = 0 → prediction must be 1. ... ok
+test_empty_dataset (test_example.TestScenarioB_DiagnoseFailure.test_empty_dataset) ... ok
+test_perfect_and_gate (test_example.TestScenarioB_DiagnoseFailure.test_perfect_and_gate)
+weights=[1,1] bias=-1.5 implements AND perfectly. ... ok
+test_zero_weight_model_misclassifies (test_example.TestScenarioB_DiagnoseFailure.test_zero_weight_model_misclassifies)
+Zero weights → score=0 → all predict 1; 3 out of 4 are wrong. ... ok
+test_abstain_zero_score (test_example.TestScenarioC_BoundaryPolicy.test_abstain_zero_score) ... ok
+test_all_policies_negative_score (test_example.TestScenarioC_BoundaryPolicy.test_all_policies_negative_score) ... ok
+test_all_policies_positive_score (test_example.TestScenarioC_BoundaryPolicy.test_all_policies_positive_score) ... ok
+test_negative_tie_zero_score (test_example.TestScenarioC_BoundaryPolicy.test_negative_tie_zero_score) ... ok
+test_positive_tie_zero_score (test_example.TestScenarioC_BoundaryPolicy.test_positive_tie_zero_score) ... ok
+test_unknown_policy_raises (test_example.TestScenarioC_BoundaryPolicy.test_unknown_policy_raises) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.001s
+
+OK
