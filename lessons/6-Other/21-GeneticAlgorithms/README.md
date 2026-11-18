@@ -75,3 +75,13 @@ Hints:
 1. As a gene, consider using the list of root values
 
 Use [Diophantine.ipynb](Diophantine.ipynb) as a starting point.
+
+## Applied Lab: Deterministic Fitness Ranking and Elite Selection (R38-T051)
+
+An applied concept example demonstrating deterministic fitness ranking and elite selection for a small population is available in [applied-labs/r38-t051/example.py](applied-labs/r38-t051/example.py) and documented in [applied-labs/r38-t051/README.md](applied-labs/r38-t051/README.md).
+
+- **Scope & Limitations**: Minimal complete local example operating on candidate records. Does not require GPU, cloud services, or external libraries. Illustrates selection mechanics in Python standard library.
+- **Fixture**: Population with candidates `A (fitness=3.0)`, `B (fitness=8.0)`, `C (fitness=5.0)`.
+- **Invocation**: `python3 example.py` (or run automated checks via `python3 -m unittest discover -s applied-labs/r38-t051 -p "test_*.py"`).
+- **Expected Output**: For `elite_count=2`, candidates `['B', 'C']` are selected deterministically with tie-breaking by candidate ID.
+
