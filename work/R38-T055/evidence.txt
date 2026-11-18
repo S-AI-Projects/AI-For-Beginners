@@ -1,0 +1,5 @@
+Task ID: R38-T055
+Description: Compute a confusion matrix, precision and recall for a binary classifier using fixed predicted and true labels; make the zero-denominator policy explicit.
+Test Execution:
+
+Status: PASS
