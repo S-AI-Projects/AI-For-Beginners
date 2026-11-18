@@ -1,0 +1,5 @@
+Task ID: R38-T059
+Description: Validate and normalize a small synthetic image batch: accept N×H×W numeric pixels in 0..255 and produce values in 0..1 without changing the batch shape.
+Test Execution:
+
+Status: PASS

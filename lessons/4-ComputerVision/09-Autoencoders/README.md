@@ -95,3 +95,11 @@ For reference, read more about autoencoders in these resources:
 ## Assignment
 
 At the end of [this notebook using TensorFlow](AutoencodersTF.ipynb), you will find a 'task' - use this as your assignment.
+
+## Applied Lab: Tensor-Shape Contract and Normalization (R38-T059)
+
+An applied concept example demonstrating image batch shape validation and pixel normalization is available in [applied-labs/r38-t059/example.py](applied-labs/r38-t059/example.py) and documented in [applied-labs/r38-t059/README.md](applied-labs/r38-t059/README.md).
+
+- **Scope & Limitations**: Evaluates preprocessing mechanics using synthetic batches; makes no claims on autoencoder reconstruction accuracy.
+- **Fixture**: Batch `[[[0, 255], [128, 64]]]`.
+- **Expected Output**: Preserves shape `(1, 2, 2)` and normalizes values to `[[[0.0, 1.0], [0.502, 0.251]]]`.
