@@ -75,3 +75,12 @@ Read through [TrainingTricks.md](TrainingTricks.md) to deepen your knowledge of 
 ## [Assignment](lab/README.md)
 
 In this lab, we will use real-life [Oxford-IIIT](https://www.robots.ox.ac.uk/~vgg/data/pets/) pets dataset with 35 breeds of cats and dogs, and we will build a transfer learning classifier.
+
+
+## Applied Lab: Training-Only Imputation Scenario Assessment (R38-T060)
+
+An applied concept example demonstrating fit/transform separation to prevent data leakage during missing-value imputation is available in [applied-labs/r38-t060/example.py](applied-labs/r38-t060/example.py) and documented in [applied-labs/r38-t060/README.md](applied-labs/r38-t060/README.md).
+
+- **Scope & Limitations**: Local educational demonstration using pure Python standard library.
+- **Fixture**: Training set `[2, None, 4]` and validation set `[100, None]`.
+- **Expected Output**: Computes mean `3.0` on training data and imputes validation data to `[100.0, 3.0]`.
