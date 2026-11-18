@@ -150,3 +150,12 @@ Take this lesson to the real world and try to conceptualize a multi-agent system
 Review the use of this type of system in industry. Pick a domain such as manufacturing or the video game industry and discover how multi-agent systems can be used to solve unique problems.
 
 ## [NetLogo Assignment](assignment.md)
+
+
+## Applied Lab: Dependency-Plan Validation and Ordering (R38-T053)
+
+An applied concept example demonstrating multi-agent dependency plan validation, cycle rejection, and topological ordering is available in [applied-labs/r38-t053/example.py](applied-labs/r38-t053/example.py) and documented in [applied-labs/r38-t053/README.md](applied-labs/r38-t053/README.md).
+
+- **Scope & Limitations**: Operates entirely in-memory on task identifier graphs without external scheduling frameworks.
+- **Fixture**: Tasks A (no deps), B (depends on A), C (depends on B).
+- **Expected Output**: Produces execution order `['A', 'B', 'C']`; rejects cycles and unknown dependencies.
