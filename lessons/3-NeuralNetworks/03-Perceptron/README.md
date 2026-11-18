@@ -91,3 +91,12 @@ In this lesson, we have implemented a perceptron for binary classification task,
 
 * [Instructions](lab/README.md)
 * [Notebook](lab/PerceptronMultiClass.ipynb)
+
+
+## Applied Lab: Single Perceptron Update with Error Recovery (R38-T058)
+
+An applied concept example demonstrating a single perceptron prediction and weight update step with zero-score tie rules and error recovery is available in [applied-labs/r38-t058/example.py](applied-labs/r38-t058/example.py) and documented in [applied-labs/r38-t058/README.md](applied-labs/r38-t058/README.md).
+
+- **Scope & Limitations**: Educational 2D single-step update; no multi-layer networks or GPU execution.
+- **Fixture**: Initial weights `[0, 0]`, bias `0`, input `[1, 2]`, target `1`.
+- **Expected Output**: Updates weights to `[1.0, 2.0]` and bias to `1.0`.

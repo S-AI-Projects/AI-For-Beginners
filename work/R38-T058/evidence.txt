@@ -1,0 +1,5 @@
+Task ID: R38-T058
+Description: Implement one perceptron prediction/update step on a 2D fixture with a documented zero-score tie rule.
+Test Execution:
+
+Status: PASS
