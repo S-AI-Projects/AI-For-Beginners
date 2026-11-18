@@ -1,0 +1,5 @@
+Task ID: R38-T060
+Description: Fit a missing-value mean on training observations only, then apply the stored value to validation observations without refitting.
+Test Execution:
+
+Status: PASS
