@@ -119,3 +119,12 @@ In this lab, you are asked to solve two classification problems using single- an
 * [Instructions](lab/README.md)
 * [Notebook](lab/LabFrameworks.ipynb)
 
+
+
+## Applied Lab: Agent-Component Routing with Decision Trace (R38-T054)
+
+An applied concept example demonstrating intent routing, priority arbitration, and auditable decision tracing is available in [applied-labs/r38-t054/example.py](applied-labs/r38-t054/example.py) and documented in [applied-labs/r38-t054/README.md](applied-labs/r38-t054/README.md).
+
+- **Scope & Limitations**: Pure rule-based dispatcher with zero external network or framework dependencies.
+- **Fixture**: Routes queries matching "help", "calculate", and unknown keywords.
+- **Expected Output**: Routes to `support`, `calculator`, and `fallback` respectively, logging full step traces.
