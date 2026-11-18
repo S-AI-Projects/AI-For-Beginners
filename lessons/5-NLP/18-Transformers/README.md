@@ -107,3 +107,11 @@ In this lesson you learned about Transformers and Attention Mechanisms, all esse
 * [A series of blog posts](https://towardsdatascience.com/transformers-explained-visually-part-1-overview-of-functionality-95a6dd460452) on transformers, explaining the architecture in detail.
 
 ## [Assignment](assignment.md)
+
+## Applied Lab: Worked Cosine-Similarity Example (R38-T057)
+
+An applied concept example demonstrating step-by-step worked cosine similarity calculations is available in [applied-labs/r38-t057/example.py](applied-labs/r38-t057/example.py) and documented in [applied-labs/r38-t057/README.md](applied-labs/r38-t057/README.md).
+
+- **Scope & Limitations**: Standard library implementation with full intermediate audit logging.
+- **Fixture**: Compares `[1, 0]` vs `[1, 0]`, `[1, 0]` vs `[0, 1]`, and `[1, 0]` vs `[0, 0]`.
+- **Expected Output**: Returns `1.0`, `0.0`, and `None` respectively.
