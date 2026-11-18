@@ -41,3 +41,12 @@ In the previous lesson we have seen that words embeddings work like magic! Now w
 ## 🚀 [Assignment: Train Skip-Gram Model](lab/README.md)
 
 In the lab, we challenge you to modify the code from this lesson to train skip-gram model instead of CBoW. [Read the details](lab/README.md)
+
+
+## Applied Lab: Refactored Cosine-Similarity Lookup (R38-T056)
+
+An applied concept example demonstrating functional separation between similarity computation and presentation formatting is available in [applied-labs/r38-t056/example.py](applied-labs/r38-t056/example.py) and documented in [applied-labs/r38-t056/README.md](applied-labs/r38-t056/README.md).
+
+- **Scope & Limitations**: Pure Python standard library implementation.
+- **Fixture**: Vectors `[1, 0]` vs `[1, 0]`, `[1, 0]` vs `[0, 1]`, and zero vector `[0, 0]`.
+- **Expected Output**: Produces `1.0`, `0.0`, and `None` respectively.
