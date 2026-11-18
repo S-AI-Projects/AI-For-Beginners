@@ -82,3 +82,12 @@ Generation with Visual Attention](https://arxiv.org/pdf/1502.03044v2.pdf)
 - [Understanding LSTM Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/) by Christopher Olah.
 
 ## [Assignment: Notebooks](assignment.md)
+
+
+## Applied Lab: Cosine-Similarity Lookup with Boundary Handling (R38-T052)
+
+An applied concept example demonstrating cosine similarity between embedding vectors and explicit zero-vector handling is available in [applied-labs/r38-t052/example.py](applied-labs/r38-t052/example.py) and documented in [applied-labs/r38-t052/README.md](applied-labs/r38-t052/README.md).
+
+- **Scope & Limitations**: Standard library implementation with zero external dependencies. Illustrates similarity computation and sentinel handling for zero vectors.
+- **Fixture**: `[1, 0]` vs `[1, 0]`, `[1, 0]` vs `[0, 1]`, and zero vector `[0, 0]`.
+- **Expected Output**: Returns `1.0`, `0.0`, and `None` (sentinel for zero vectors) respectively.
