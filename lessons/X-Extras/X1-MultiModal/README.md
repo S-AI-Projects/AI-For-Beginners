@@ -74,3 +74,11 @@ Picture generated from prompt *a closeup watercolor portrait of young male teach
 
 * VQGAN Paper: [Taming Transformers for High-Resolution Image Synthesis](https://compvis.github.io/taming-transformers/paper/paper.pdf)
 * CLIP Paper: [Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/pdf/2103.00020.pdf)
+
+## Applied Lab: Binary Classification Evaluation Adapter (R38-T055)
+
+An applied concept example demonstrating confusion matrix computation, precision, recall, and explicit zero-denominator handling is available in [applied-labs/r38-t055/example.py](applied-labs/r38-t055/example.py) and documented in [applied-labs/r38-t055/README.md](applied-labs/r38-t055/README.md).
+
+- **Scope & Limitations**: Pure Python implementation without external ML frameworks.
+- **Fixture**: `y_true=[1,1,0,0]`, `y_pred=[1,0,1,0]`.
+- **Expected Output**: `TP=1, FN=1, FP=1, TN=1, precision=0.5, recall=0.5`.
