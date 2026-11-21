@@ -63,3 +63,19 @@ Word2Vec has been used for some interesting applications, including generating s
 Read through this paper on Word2Vec: [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/pdf/1301.3781.pdf)
 
 ## [Assignment: Notebooks](assignment.md)
+
+## Applied Lab: Cosine-Similarity Lookup — Runnable Concept Example (R38-T031)
+
+An applied concept example demonstrating cosine similarity between local embedding vectors with explicit handling for zero-norm vectors is available in [applied-labs/r38-t031/example.py](applied-labs/r38-t031/example.py) and documented in [applied-labs/r38-t031/README.md](applied-labs/r38-t031/README.md).
+
+- **Scope & Limitations**: Educational concept demonstration using the Python standard library. Operates on bounded local fixtures without external weights, hardware dependencies, or network calls.
+- **Fixture**:
+  - Identical vectors: `[1, 0]` vs `[1, 0]` -> `1.0`
+  - Orthogonal vectors: `[1, 0]` vs `[0, 1]` -> `0.0`
+  - Zero-norm vector: `[1, 0]` vs `[0, 0]` -> `None` (documented `UNDEFINED_SENTINEL`)
+- **Invocation**:
+  ```bash
+  python3 lessons/5-NLP/14-Embeddings/applied-labs/r38-t031/example.py
+  python3 -m unittest discover -s lessons/5-NLP/14-Embeddings/applied-labs/r38-t031 -p "test_*.py"
+  ```
+

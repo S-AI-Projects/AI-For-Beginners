@@ -1,0 +1,17 @@
+Task ID: R38-T031
+Description: Compare small local embedding vectors using cosine similarity and handle zero vectors explicitly.
+Python Version: Python 3.15.2
+Git Version: git version 2.55.0
+Automated Check: python3 -m unittest discover -s lessons/5-NLP/14-Embeddings/applied-labs/r38-t031 -p "test_*.py"
+
+Fixtures & Results:
+- [1, 0] vs [1, 0] -> Expected: 1.0, Actual: 1.0 (PASS)
+- [1, 0] vs [0, 1] -> Expected: 0.0, Actual: 0.0 (PASS)
+- [1, 0] vs [-1, 0] -> Expected: -1.0, Actual: -1.0 (PASS)
+- [1, 0] vs [0, 0] -> Expected: None, Actual: None (PASS)
+- [0, 0] vs [0, 0] -> Expected: None, Actual: None (PASS)
+- [3, 4] vs [4, 3] -> Expected: 0.96, Actual: 0.96 (PASS)
+
+Test Suite Execution:
+Ran 13 tests in 0.001s
+Status: PASS (0 failures, 0 errors)
