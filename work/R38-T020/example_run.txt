@@ -1,0 +1,13 @@
+=== Tensor-Shape Contract: Scenario Assessment Demo (R38-T020) ===
+
+[Q1_predict_output] Validated: True
+  Question: What is the expected normalized output and shape for [[[0, 255], [128, 64]]]?
+  Rationale: Linear scaling divides each integer intensity by 255.0. 0/255 = 0.0, 255/255 = 1.0, 128/255 ≈ 0.50196, and 64/255 ≈ 0.25098. The 3D list structure remains identical, preserving the (1, 2, 2) batch shape.
+
+[Q2_diagnose_failure] Validated: True
+  Question: Why does input [[[-5, 255], [128, 64]]] fail, and what exception is raised?
+  Rationale: Pixel values in digital 8-bit imaging represent non-negative light intensities. A pixel value of -5 is unphysical and indicates data corruption or upstream processing bugs. The validator raises ValueError explicitly rather than propagating invalid tensors.
+
+[Q3_boundary_policy] Validated: True
+  Question: Why is strict boundary rejection chosen over silent clamping for values outside [0, 255]?
+  Rationale: Silent clamping (e.g. min(255, max(0, x))) masks sensor faults, erroneous color space conversions, or overflow bugs. In safety-critical computer vision pipelines, failing fast with an explicit exception prevents training degradation or silent downstream inference failures.

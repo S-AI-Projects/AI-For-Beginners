@@ -92,6 +92,26 @@ Let's do some experiments with OpenCV by exploring [OpenCV Notebook](OpenCV.ipyn
 
 Sometimes, relatively complex tasks such as movement detection or fingertip detection can be solved purely by computer vision. Thus, it is very helpful to know the basic techniques of computer vision, and what libraries like OpenCV can do.
 
+## Applied Lab: Tensor-Shape Contract & Scenario Assessment (R38-T020)
+
+Image batch preprocessing requires strict tensor shape invariance and pixel range validation:
+- Code: [applied-labs/r38-t020/example.py](applied-labs/r38-t020/example.py)
+- Documentation: [applied-labs/r38-t020/README.md](applied-labs/r38-t020/README.md)
+
+### Invocation & Contract Fixture
+
+```bash
+python3 lessons/4-ComputerVision/06-IntroCV/applied-labs/r38-t020/example.py
+```
+
+| Input Batch | Input Shape | Normalized Output | Output Shape | Validation Rule |
+|---|---|---|---|---|
+| `[[[0, 255], [128, 64]]]` | `(1, 2, 2)` | `[[[0.0, 1.0], [0.502, 0.251]]]` | `(1, 2, 2)` | $0 \le \text{pixel} \le 255$ |
+
+> [!NOTE]
+> **Simulation Scope & Limitations:**
+> This applied lab provides executable scenario assessments of preprocessing logic in standard Python, without hardware acceleration or model weights.
+
 ## 🚀 Challenge
 
 Watch [this video](https://docs.microsoft.com/shows/ai-show/ai-show--2021-opencv-ai-competition--grand-prize-winners--cortic-tigers--episode-32?WT.mc_id=academic-77998-cacaste) from the AI show to learn about the Cortic Tigers project and how they built a block-based solution to democratize computer vision tasks via a robot. Do some research on other projects like this that help onboard new learners into the field.
