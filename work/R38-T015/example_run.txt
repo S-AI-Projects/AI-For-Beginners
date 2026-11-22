@@ -1,0 +1,4 @@
+=== Tensor-Shape Contract: Offline Service Adapter Demo (R38-T015) ===
+Input: [[[0, 255], [128, 64]]] (Shape: (1, 2, 2))
+Normalized: [[[0.0, 1.0], [0.5019607843137255, 0.25098039215686274]]] (Shape: (1, 2, 2))
+Precondition & Invariant: 0 -> 0.0, 255 -> 1.0, shape strictly retained.
