@@ -1,0 +1,9 @@
+=== Tensor-Shape Contract: Evaluation Experiment (R38-T019) ===
+Contract Input: [[[0, 255], [128, 64]]] -> Shape: (1, 2, 2)
+Contract Output: [[[0.0, 1.0], [0.5019607843137255, 0.25098039215686274]]] -> Shape: (1, 2, 2)
+Contract values: 0 -> 0.0, 255 -> 1.0
+
+--- Comparative Evaluation Experiment Results ---
+[Config A (1x2x2)] Pixels: 4, Shape Invariant: True, Avg Latency: 0.82 us
+[Config B (2x2x2)] Pixels: 8, Shape Invariant: True, Avg Latency: 1.33 us
+[Config C (1x4x4)] Pixels: 16, Shape Invariant: True, Avg Latency: 1.68 us
