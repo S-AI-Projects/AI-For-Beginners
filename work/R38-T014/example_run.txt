@@ -1,0 +1,9 @@
+=== Tensor-Shape Contract & State Trace Demo (R38-T014) ===
+Input Batch: [[[0, 255], [128, 64]]]
+Input Shape: (1, 2, 2)
+Normalized Output: [[[0.0, 1.0], [0.5019607843137255, 0.25098039215686274]]]
+Output Shape: (1, 2, 2)
+State Trace:
+  - {'step': 'shape_inspection', 'batch_shape': (1, 2, 2), 'status': 'VALID_STRUCTURE'}
+  - {'step': 'pixel_validation', 'min_bound': 0, 'max_bound': 255, 'status': 'ALL_PIXELS_IN_RANGE'}
+  - {'step': 'normalization', 'output_shape': (1, 2, 2), 'shape_invariant_preserved': True, 'status': 'COMPLETE'}

@@ -1,0 +1,15 @@
+test_contract_batch_shape_and_normalization (test_example.TestTensorShapeContract.test_contract_batch_shape_and_normalization)
+Batch [[[0,255],[128,64]]] stays shape (1,2,2); 0->0 and 255->1. ... ok
+test_deliberate_wrong_result_fails (test_example.TestTensorShapeContract.test_deliberate_wrong_result_fails)
+Deliberate incorrect expectation fails test. ... ok
+test_negative_pixel_rejected (test_example.TestTensorShapeContract.test_negative_pixel_rejected)
+Negative pixels (< 0) are rejected with ValueError. ... ok
+test_non_uniform_batch_rejected (test_example.TestTensorShapeContract.test_non_uniform_batch_rejected)
+Ragged/non-rectangular dimensions raise ValueError. ... ok
+test_out_of_bounds_high_pixel_rejected (test_example.TestTensorShapeContract.test_out_of_bounds_high_pixel_rejected)
+Pixels exceeding 255 are rejected with ValueError. ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
