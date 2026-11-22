@@ -1,0 +1,21 @@
+test_identical_vectors_yield_one (test_example.TestBoundaryCaseContract.test_identical_vectors_yield_one)
+[1,0] vs [1,0] gives 1.0. ... ok
+test_orthogonal_vectors_yield_zero (test_example.TestBoundaryCaseContract.test_orthogonal_vectors_yield_zero)
+[1,0] vs [0,1] gives 0.0. ... ok
+test_zero_vector_returns_sentinel (test_example.TestBoundaryCaseContract.test_zero_vector_returns_sentinel)
+Zero vector returns documented undefined-result sentinel. ... ok
+test_dimension_mismatch (test_example.TestInvalidInputs.test_dimension_mismatch) ... ok
+test_empty_input (test_example.TestInvalidInputs.test_empty_input) ... ok
+test_boundary_opposite_direction (test_example.TestSmallestValidAndBoundaryCases.test_boundary_opposite_direction)
+Opposite direction represents the minimum similarity boundary (-1.0). ... ok
+test_deliberate_wrong_result_fails (test_example.TestSmallestValidAndBoundaryCases.test_deliberate_wrong_result_fails)
+Verify test suite fails when assertion is deliberately violated. ... ok
+test_smallest_valid_1d_vectors (test_example.TestSmallestValidAndBoundaryCases.test_smallest_valid_1d_vectors)
+1-dimensional non-zero vectors represent the minimal valid input. ... ok
+test_subnormal_near_zero_boundary (test_example.TestSmallestValidAndBoundaryCases.test_subnormal_near_zero_boundary)
+Magnitudes below tolerance trigger the zero-norm boundary decision. ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.000s
+
+OK

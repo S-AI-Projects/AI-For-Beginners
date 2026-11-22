@@ -52,6 +52,29 @@ The pretrained embeddings above represent both of these meanings of the word 'pl
 
 In this lesson, you discovered how to build and use embedding layers in TensorFlow and Pytorch to better reflect the semantic meanings of words.
 
+## Applied Lab: Cosine Similarity Boundary Decisions (R38-T012)
+
+Semantic similarity in embedding spaces is measured via cosine similarity. For details on smallest valid inputs, boundary conditions (orthogonal, opposite, zero-norm), and error handling, see:
+- Code: [applied-labs/r38-t012/example.py](applied-labs/r38-t012/example.py)
+- Documentation: [applied-labs/r38-t012/README.md](applied-labs/r38-t012/README.md)
+
+### Invocation & Boundary Fixtures
+
+```bash
+python3 lessons/5-NLP/14-Embeddings/applied-labs/r38-t012/example.py
+```
+
+| Vector A | Vector B | Expected Similarity | Boundary Decision |
+|---|---|---|---|
+| `[1, 0]` | `[1, 0]` | `1.0` | Maximum positive alignment |
+| `[1, 0]` | `[0, 1]` | `0.0` | Orthogonal boundary (perpendicular) |
+| `[1, 0]` | `[-1, 0]` | `-1.0` | Opposite boundary (complete divergence) |
+| `[0, 0]` | `[1, 0]` | `UNDEFINED_SENTINEL (nan)` | Zero-norm boundary: direction undefined |
+
+> [!NOTE]
+> **Simulation Scope & Limitations:**
+> This concept lab uses only the Python standard library. It demonstrates mathematical boundary behavior of cosine similarity and does not download pre-trained weights or require GPUs.
+
 ## 🚀 Challenge
 
 Word2Vec has been used for some interesting applications, including generating song lyrics and poetry. Take a look at [this article](https://www.politetype.com/blog/word2vec-color-poems) which walks through how the author used Word2Vec to generate poetry. Watch [this video by Dan Shiffmann](https://www.youtube.com/watch?v=LSS_bos_TPI&ab_channel=TheCodingTrain) as well to discover a different explanation of this technique. Then try to apply these techniques to your own text corpus, perhaps sourced from Kaggle.
