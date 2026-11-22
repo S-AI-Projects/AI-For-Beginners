@@ -62,6 +62,27 @@ See the code to reproduce the results above in the following notebook:
 
 Using transfer learning, you are able to quickly put together a classifier for a custom object classification task and achieve high accuracy. You can see that more complex tasks that we are solving now require higher computational power, and cannot be easily solved on the CPU. In the next unit, we will try to use a more lightweight implementation to train the same model using lower compute resources, which results in just slightly lower accuracy.
 
+## Applied Lab: Training-Only Imputation (R38-T013)
+
+When preparing datasets for transfer learning, all pre-processing parameters (such as imputation values and normalization constants) must be fitted strictly on the training partition to avoid data leakage:
+- Code: [applied-labs/r38-t013/example.py](applied-labs/r38-t013/example.py)
+- Documentation: [applied-labs/r38-t013/README.md](applied-labs/r38-t013/README.md)
+
+### Invocation & Fixture
+
+```bash
+python3 lessons/4-ComputerVision/08-TransferLearning/applied-labs/r38-t013/example.py
+```
+
+| Split | Input Data | Fitted Training Mean | Transformed Output | Leakage Check |
+|---|---|---|---|---|
+| Training | `[2, None, 4]` | `3.0` | `[2.0, 3.0, 4.0]` | Baseline training statistics |
+| Validation | `[100, None]` | (uses training: `3.0`) | `[100.0, 3.0]` | Avoids leakage (`[100.0, 100.0]` rejected) |
+
+> [!NOTE]
+> **Simulation Scope & Limitations:**
+> This lab provides a standard-library reference demonstrating fit/transform separation. It verifies pipeline mechanics without requiring real model downloads, GPU compute, or external services.
+
 ## 🚀 Challenge
 
 In the accompanying notebooks, there are notes at the bottom about how transfer knowledge works best with somewhat similar training data (a new type of animal, perhaps). Do some experimentation with completely new types of images to see how well or poorly your transfer knowledge models perform.

@@ -1,0 +1,15 @@
+test_approach_equivalence_on_contract_fixture (test_example.TestApproachComparison.test_approach_equivalence_on_contract_fixture) ... ok
+test_deliberate_wrong_result_fails (test_example.TestApproachComparison.test_deliberate_wrong_result_fails)
+Deliberate wrong result (leakage outcome [100, 100]) fails assertion. ... ok
+test_transform_before_fit_raises_error (test_example.TestApproachComparison.test_transform_before_fit_raises_error) ... ok
+test_all_missing_training_input_rejected (test_example.TestImputationContract.test_all_missing_training_input_rejected)
+All-missing training input must be rejected with ValueError. ... ok
+test_empty_training_input_rejected (test_example.TestImputationContract.test_empty_training_input_rejected)
+Empty input raises ValueError. ... ok
+test_training_and_validation_contract (test_example.TestImputationContract.test_training_and_validation_contract)
+Training [2,None,4] yields mean 3; validation [100,None] becomes [100,3], not [100,100]. ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK
