@@ -1,0 +1,19 @@
+=== Cosine Similarity Boundary-Case Extension (R38-T012) ===
+Undefined sentinel: nan
+
+[Smallest valid (1D identical)]
+  a=[1.0], b=[1.0] -> result: 1.0000
+[Smallest valid (1D opposite)]
+  a=[1.0], b=[-1.0] -> result: -1.0000
+[2D Identical (full alignment)]
+  a=[1, 0], b=[1, 0] -> result: 1.0000
+[2D Orthogonal (boundary: zero similarity)]
+  a=[1, 0], b=[0, 1] -> result: 0.0000
+[2D Opposite (boundary: -1 similarity)]
+  a=[1, 0], b=[-1, 0] -> result: -1.0000
+[Zero-norm boundary (vector a is 0)]
+  a=[0, 0], b=[1, 0] -> result: UNDEFINED_SENTINEL (nan)
+[Zero-norm boundary (vector b is 0)]
+  a=[1, 0], b=[0, 0] -> result: UNDEFINED_SENTINEL (nan)
+[Zero-norm boundary (both 0)]
+  a=[0, 0], b=[0, 0] -> result: UNDEFINED_SENTINEL (nan)
