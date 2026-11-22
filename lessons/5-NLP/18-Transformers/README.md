@@ -93,6 +93,31 @@ Continue your learning in the following notebooks:
 * [Transformers in PyTorch](TransformersPyTorch.ipynb)
 * [Transformers in TensorFlow](TransformersTF.ipynb)
 
+## Applied Lab: Cosine-Similarity Lookup (R38-T011)
+
+In attention mechanisms, the similarity between query and key representations is computed using dot products. For L2-normalized embedding vectors, this dot product is equivalent to cosine similarity:
+
+$$\text{CosineSimilarity}(u, v) = \frac{u \cdot v}{\|u\|_2 \|v\|_2}$$
+
+See the runnable concept lab: [applied-labs/r38-t011/example.py](applied-labs/r38-t011/example.py) and [applied-labs/r38-t011/README.md](applied-labs/r38-t011/README.md).
+
+### Quick Invocation & Fixtures
+
+```bash
+python3 lessons/5-NLP/18-Transformers/applied-labs/r38-t011/example.py
+```
+
+| Vector A | Vector B | Expected Cosine Similarity | Note |
+|---|---|---|---|
+| `[1, 0]` | `[1, 0]` | `1.0` | Maximum alignment / identical direction |
+| `[1, 0]` | `[0, 1]` | `0.0` | Orthogonal / uncorrelated attention |
+| `[1, 0]` | `[-1, 0]` | `-1.0` | Opposite direction |
+| `[0, 0]` | `[1, 0]` | `UNDEFINED_SENTINEL (nan)` | Zero-norm boundary case handled explicitly |
+
+> [!NOTE]
+> **Simulation Scope & Limitations:**
+> This applied lab is a minimal mathematical concept demonstration of vector normalization and cosine similarity. It runs purely on the Python standard library with no external dependencies, no GPU acceleration, no model downloads, and no trained model weight claims.
+
 ## Conclusion
 
 In this lesson you learned about Transformers and Attention Mechanisms, all essential tools in the NLP toolbox. There are many variations of Transformer architectures including BERT, DistilBERT. BigBird, OpenGPT3 and more that can be fine tuned. The [HuggingFace package](https://github.com/huggingface/) provides repository for training many of these architectures with both PyTorch and TensorFlow.
