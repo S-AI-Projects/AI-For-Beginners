@@ -1,0 +1,7 @@
+=== Cosine Similarity: Worked Example with Checks (R38-T017) ===
+[Identical] [1, 0] vs [1, 0] -> 1.0000
+  Step trace: dot(1) / (norm_a(1.0000) * norm_b(1.0000)) = 1.0000
+[Orthogonal] [1, 0] vs [0, 1] -> 0.0000
+  Step trace: dot(0) / (norm_a(1.0000) * norm_b(1.0000)) = 0.0000
+[Zero Vector] [0, 0] vs [1, 0] -> UNDEFINED_SENTINEL (nan)
+  Step trace: Zero norm encountered: division by zero prevented, returning UNDEFINED_SENTINEL.

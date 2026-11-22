@@ -1,0 +1,16 @@
+test_deliberate_wrong_result_fails (test_example.TestWorkedExampleContract.test_deliberate_wrong_result_fails)
+Deliberate incorrect expectation triggers test failure. ... ok
+test_dimension_mismatch (test_example.TestWorkedExampleContract.test_dimension_mismatch) ... ok
+test_identical_vectors_yield_one (test_example.TestWorkedExampleContract.test_identical_vectors_yield_one)
+[1,0] versus [1,0] gives 1.0. ... ok
+test_orthogonal_vectors_yield_zero (test_example.TestWorkedExampleContract.test_orthogonal_vectors_yield_zero)
+[1,0] versus [0,1] gives 0.0. ... ok
+test_worked_trace_explanation (test_example.TestWorkedExampleContract.test_worked_trace_explanation)
+Execute exact worked input-to-output explanation as regression check. ... ok
+test_zero_vector_returns_sentinel (test_example.TestWorkedExampleContract.test_zero_vector_returns_sentinel)
+Zero vector returns documented undefined sentinel. ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK

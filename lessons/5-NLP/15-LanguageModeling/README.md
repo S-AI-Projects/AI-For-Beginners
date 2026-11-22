@@ -30,6 +30,28 @@ Continue your learning in the following notebooks:
 
 In the previous lesson we have seen that words embeddings work like magic! Now we know that training word embeddings is not a very complex task, and we should be able to train our own word embeddings for domain specific text if needed. 
 
+## Applied Lab: Cosine-Similarity Lookup Worked Example (R38-T017)
+
+Evaluating semantic similarities between word embeddings in language modeling relies on vector cosine similarity:
+- Code: [applied-labs/r38-t017/example.py](applied-labs/r38-t017/example.py)
+- Documentation: [applied-labs/r38-t017/README.md](applied-labs/r38-t017/README.md)
+
+### Invocation & Worked Fixtures
+
+```bash
+python3 lessons/5-NLP/15-LanguageModeling/applied-labs/r38-t017/example.py
+```
+
+| Vector A | Vector B | Expected Similarity | Worked Formula |
+|---|---|---|---|
+| `[1, 0]` | `[1, 0]` | `1.0` | $\text{dot}=1.0, \|a\|=\|b\|=1.0 \to 1.0 / (1 \times 1) = 1.0$ |
+| `[1, 0]` | `[0, 1]` | `0.0` | $\text{dot}=0.0, \|a\|=\|b\|=1.0 \to 0.0 / (1 \times 1) = 0.0$ |
+| `[0, 0]` | `[1, 0]` | `UNDEFINED_SENTINEL (nan)` | Zero-norm detected $\to$ prevents division by zero |
+
+> [!NOTE]
+> **Simulation Scope & Limitations:**
+> This lab provides a standard-library mathematical walkthrough and regression test. It does not load large pre-trained neural language model checkpoints. 
+
 ## [Post-lecture quiz](https://ff-quizzes.netlify.app/en/ai/quiz/30)
 
 ## Review & Self Study
