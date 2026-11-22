@@ -1,0 +1,15 @@
+test_absent_class_policy_returns_none (test_example.TestSegmentationOverlapContract.test_absent_class_policy_returns_none)
+Classes absent from both truth and prediction yield None. ... ok
+test_contract_fixture_class_ious (test_example.TestSegmentationOverlapContract.test_contract_fixture_class_ious)
+truth [0,1,1,0], prediction [0,1,0,0]: class1 IoU=1/2, class0 IoU=2/3. ... ok
+test_deliberate_wrong_result_fails (test_example.TestSegmentationOverlapContract.test_deliberate_wrong_result_fails)
+Deliberate incorrect expectation triggers test failure. ... ok
+test_dimension_mismatch_raises_error (test_example.TestSegmentationOverlapContract.test_dimension_mismatch_raises_error) ... ok
+test_empty_mask_raises_error (test_example.TestSegmentationOverlapContract.test_empty_mask_raises_error) ... ok
+test_refactor_equivalence_with_baseline (test_example.TestSegmentationOverlapContract.test_refactor_equivalence_with_baseline)
+Verify before/after refactor equivalence. ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK

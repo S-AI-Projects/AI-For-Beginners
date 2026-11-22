@@ -1,0 +1,9 @@
+=== Segmentation Mask Overlap & Refactor Demo (R38-T016) ===
+Ground Truth: [0, 1, 1, 0]
+Prediction:   [0, 1, 0, 0]
+Baseline Results:   {0: 0.6666666666666666, 1: 0.5, 2: None}
+Refactored Results: {0: 0.6666666666666666, 1: 0.5, 2: None}
+Equivalence Confirmed: True
+Class 1 IoU: 0.5000 (expected 0.5000 = 1/2)
+Class 0 IoU: 0.6667 (expected 0.6667 = 2/3)
+Class 2 IoU: None (expected None - absent class policy)

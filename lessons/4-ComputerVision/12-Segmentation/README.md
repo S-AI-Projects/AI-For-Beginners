@@ -53,6 +53,28 @@ Open the notebooks below to learn more about different semantic segmentation arc
 
 Segmentation is a very powerful technique for image classification, moving beyond bounding boxes to pixel-level classification. It is a technique used in medical imaging, among other applications.
 
+## Applied Lab: Segmentation Mask Overlap & Component Refactor (R38-T016)
+
+Semantic segmentation quality is quantified by computing Intersection-over-Union (IoU) across predicted and ground-truth integer label masks:
+- Code: [applied-labs/r38-t016/example.py](applied-labs/r38-t016/example.py)
+- Documentation: [applied-labs/r38-t016/README.md](applied-labs/r38-t016/README.md)
+
+### Invocation & Contract Fixture
+
+```bash
+python3 lessons/4-ComputerVision/12-Segmentation/applied-labs/r38-t016/example.py
+```
+
+| Class | Ground Truth | Prediction | Intersection | Union | IoU Outcome |
+|---|---|---|---|---|---|
+| Class 1 | `[0, 1, 1, 0]` | `[0, 1, 0, 0]` | 1 | 2 | `1/2` (`0.5`) |
+| Class 0 | `[0, 1, 1, 0]` | `[0, 1, 0, 0]` | 2 | 3 | `2/3` (`~0.6667`) |
+| Class 2 (Absent) | `[0, 1, 1, 0]` | `[0, 1, 0, 0]` | 0 | 0 | `None` (explicit absent-class policy) |
+
+> [!NOTE]
+> **Simulation Scope & Limitations:**
+> This applied lab evaluates 1D integer label masks to verify metric calculation contracts and refactoring equivalence without external CV libraries or GPU dependencies.
+
 ## 🚀 Challenge
 
 Body segmentation is just one of the common tasks that we can do with images of people. Another important tasks include **skeleton detection** and **pose detection**. Try out [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) library to see how pose detection can be used.
