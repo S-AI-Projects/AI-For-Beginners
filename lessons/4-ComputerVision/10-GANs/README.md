@@ -81,6 +81,26 @@ The way it works is the following:
 
 In this lesson, you learned about GANS and how to train them. You also learned about the special challenges that this type of Neural Network can face, and some strategies on how to move past them.
 
+## Applied Lab: Tensor-Shape Contract & State Trace (R38-T014)
+
+In GAN training pipelines, image data preprocessing must guarantee batch shape preservation while normalizing raw pixel intensities from $[0, 255]$ to $[0.0, 1.0]$:
+- Code: [applied-labs/r38-t014/example.py](applied-labs/r38-t014/example.py)
+- Documentation: [applied-labs/r38-t014/README.md](applied-labs/r38-t014/README.md)
+
+### Invocation & Contract Fixture
+
+```bash
+python3 lessons/4-ComputerVision/10-GANs/applied-labs/r38-t014/example.py
+```
+
+| Input Batch | Input Shape | Normalized Output | Output Shape | Validation Rule |
+|---|---|---|---|---|
+| `[[[0, 255], [128, 64]]]` | `(1, 2, 2)` | `[[[0.0, 1.0], [0.502, 0.251]]]` | `(1, 2, 2)` | $0 \le \text{pixel} \le 255$ |
+
+> [!NOTE]
+> **Simulation Scope & Limitations:**
+> This applied lab verifies tensor preprocessing invariants and state tracing in standard Python without external deep learning libraries or hardware accelerators.
+
 ## 🚀 Challenge
 
 Run through the [Style Transfer notebook](StyleTransfer.ipynb) using your own images.
