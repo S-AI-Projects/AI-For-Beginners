@@ -1,0 +1,7 @@
+=== Segmentation Mask Overlap: Failure and Recovery Demo (R38-T018) ===
+[Valid Standard] Status: SUCCESS
+  Result: {0: 0.6666666666666666, 1: 0.5}
+[Invalid Mismatch] Status: ERROR
+  Handled Error: Dimension mismatch: truth length (3) != prediction length (4).
+[Recovered Valid] Status: SUCCESS
+  Result: {0: 0.6666666666666666, 1: 0.5}
