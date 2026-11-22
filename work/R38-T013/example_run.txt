@@ -1,0 +1,9 @@
+=== Training-Only Imputation Demo (R38-T013) ===
+Training Input: [2, None, 4]
+Fitted Training Mean: 3.0 (expected 3.0)
+Transformed Training: [2.0, 3.0, 4.0]
+Validation Input: [100, None]
+Correct Transformed Validation (training mean applied): [100.0, 3.0]
+Functional Equivalence: True
+Anti-Pattern (Data Leakage): refitting validation would yield [100, 100.0] - AVOIDED!
+
