@@ -1,0 +1,33 @@
+=== Cosine Similarity & Attention Lookup Demonstration ===
+Undefined sentinel representation: nan
+
+Scenario: Identical vectors (max similarity / full attention alignment)
+  Input a: [1, 0]
+  Input b: [1, 0]
+  Cosine Similarity: 1.0000
+
+Scenario: Orthogonal vectors (no alignment / zero attention weight)
+  Input a: [1, 0]
+  Input b: [0, 1]
+  Cosine Similarity: 0.0000
+
+Scenario: Opposite vectors (negative alignment)
+  Input a: [1, 0]
+  Input b: [-1, 0]
+  Cosine Similarity: -1.0000
+
+Scenario: Arbitrary 3D vectors
+  Input a: [1.0, 2.0, 3.0]
+  Input b: [2.0, 4.0, 6.0]
+  Cosine Similarity: 1.0000
+
+Scenario: Zero vector input (undefined direction sentinel)
+  Input a: [0, 0]
+  Input b: [1, 0]
+  Cosine Similarity: UNDEFINED_SENTINEL (nan)
+
+Scenario: Both zero vectors (undefined direction sentinel)
+  Input a: [0, 0]
+  Input b: [0, 0]
+  Cosine Similarity: UNDEFINED_SENTINEL (nan)
+
