@@ -92,6 +92,28 @@ Let's do some experiments with OpenCV by exploring [OpenCV Notebook](OpenCV.ipyn
 
 Sometimes, relatively complex tasks such as movement detection or fingertip detection can be solved purely by computer vision. Thus, it is very helpful to know the basic techniques of computer vision, and what libraries like OpenCV can do.
 
+## Applied Lab: Tensor-Shape Contract & Evaluation Experiment (R38-T019)
+
+Image preprocessing pipelines in computer vision must guarantee shape preservation while mapping integer intensity levels $[0, 255]$ into $[0.0, 1.0]$:
+- Code: [applied-labs/r38-t019/example.py](applied-labs/r38-t019/example.py)
+- Documentation: [applied-labs/r38-t019/README.md](applied-labs/r38-t019/README.md)
+
+### Invocation & Contract Fixture
+
+```bash
+python3 lessons/4-ComputerVision/06-IntroCV/applied-labs/r38-t019/example.py
+```
+
+| Batch Configuration | Shape | Pixel Range | Scaled Output Range | Shape Invariant |
+|---|---|---|---|---|
+| Contract Fixture | `[[[0, 255], [128, 64]]]` | $[0, 255]$ | `[[[0.0, 1.0], [0.502, 0.251]]]` | Preserved `(1, 2, 2)` |
+| Batch Scaling | `(2, 2, 2)` | $[0, 255]$ | $[0.0, 1.0]$ | Preserved `(2, 2, 2)` |
+| Spatial Scaling | `(1, 4, 4)` | $[0, 255]$ | $[0.0, 1.0]$ | Preserved `(1, 4, 4)` |
+
+> [!NOTE]
+> **Simulation Scope & Limitations:**
+> This experiment evaluates input validation contracts and linear normalization scaling using Python standard library primitives. It makes no claims regarding real-world model accuracy or trained weight representations.
+
 ## 🚀 Challenge
 
 Watch [this video](https://docs.microsoft.com/shows/ai-show/ai-show--2021-opencv-ai-competition--grand-prize-winners--cortic-tigers--episode-32?WT.mc_id=academic-77998-cacaste) from the AI show to learn about the Cortic Tigers project and how they built a block-based solution to democratize computer vision tasks via a robot. Do some research on other projects like this that help onboard new learners into the field.
