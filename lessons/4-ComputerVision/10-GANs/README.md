@@ -96,3 +96,21 @@ For reference, read more about GANs in these resources:
 ## Assignment
 
 Revisit one of the two notebooks associated to this lesson and retrain the GAN on your own images. What can you create?
+
+## Applied Lab (R38-T001): Tensor-Shape Contract and Image Batch Normalization
+
+In Generative Adversarial Networks, generators and discriminators rely on strict tensor-shape contracts and normalized input representations (typically $[0, 1]$ or $[-1, 1]$). Before feeding synthetic or real image batches to the network, preprocessing must validate dimensions and rescale pixel values without altering the batch topology.
+
+* **Simulation/Mock Note**: This local example demonstrates the preprocessing contract using small local fixtures without requiring GPU hardware, PyTorch, or cloud training dependencies.
+
+### Local Lab Invocation & Fixture
+
+- **Implementation**: [`applied-labs/r38-t001/example.py`](applied-labs/r38-t001/example.py)
+- **Test Suite**: [`applied-labs/r38-t001/test_example.py`](applied-labs/r38-t001/test_example.py)
+- **Input Fixture**: Batch `[[[0, 255], [128, 64]]]` with shape `(1, 2, 2)`
+- **Expected Output**: Shape `(1, 2, 2)` with values `[[[0.0, 1.0], [0.50196, 0.25098]]]`; negative pixels (e.g. `-1`) or values $>255$ are rejected with `ValueError`.
+
+Run tests:
+```bash
+python3 -m unittest discover -s lessons/4-ComputerVision/10-GANs/applied-labs/r38-t001 -p "test_*.py"
+```
