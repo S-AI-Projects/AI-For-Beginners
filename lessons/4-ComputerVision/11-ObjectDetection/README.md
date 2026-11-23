@@ -174,3 +174,22 @@ Read through these articles and notebooks about YOLO and try them for yourself
 * [Implementation of Faster R-CNN in Python for Object Detection](https://www.analyticsvidhya.com/blog/2018/11/implementation-faster-r-cnn-python-object-detection/)
 
 ## [Assignment: Object Detection](lab/README.md)
+
+## Applied Lab (R38-T010): Bounding-Box Intersection & Scenario Assessment
+
+In object detection systems, edge-case analysis of bounding box metrics is critical for evaluating anchor matching, Non-Maximum Suppression (NMS), and dataset sanitization. This lab assesses three applied scenarios: output prediction under scaling, geometric failure diagnosis, and edge-touching boundary policy.
+
+* **Simulation/Mock Note**: This local implementation exercises geometric assertions deterministically on local fixtures without model inference or GPU dependencies.
+
+### Local Lab Invocation & Fixture
+
+- **Implementation**: [`applied-labs/r38-t010/example.py`](applied-labs/r38-t010/example.py)
+- **Test Suite**: [`applied-labs/r38-t010/test_example.py`](applied-labs/r38-t010/test_example.py)
+- **Input Fixture**: Boxes `[0, 0, 2, 2]` and `[1, 1, 3, 3]`
+- **Expected Output**: Canonical IoU = $1/7$ ($\approx 0.142857$). Applied assessment includes output prediction for `[0,0,4,4]` and `[2,2,6,6]` (IoU = $1/7$), failure diagnosis for inverted coordinates `[4,5,2,8]`, and edge-touching boundary evaluation (IoU = $0.0$).
+
+Run tests:
+```bash
+python3 -m unittest discover -s lessons/4-ComputerVision/11-ObjectDetection/applied-labs/r38-t010 -p "test_*.py"
+```
+
